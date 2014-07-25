@@ -1,0 +1,137 @@
+-------------------------------------------------
+# "Getting and Cleaning Data: Project: CodeBook"
+-------------------------------------------------
+
+
+## Introduction
+
+This file describes the origin of the data, as well as their relationships
+
+## Data Source
+
+A full description of the data is available at 
+*"http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones".
+
+The data  for this project come from 
+*"http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"* 
+
+
+## Data Set Information
+
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. 
+
+## Data Tables 
+
+### General Tables
+
+#### Features Table
+
+Its a (561 x 2) table, where each row represents one feature. Each row has 2 columns, the first for the id of the feature and the second for the name of the feature. The content of the table is:
+
+```{r}
+    setwd("F:/Getting and Cleaning Data/Project")
+    features     = read.table('./features.txt',header=FALSE)
+    features
+```
+#### ActivityLabels
+
+Its a (6 x 2) table, where each row represents one activity. Each row has 2 columns, the first for the id of the activity and the second for the name of the activity. The content of the table is:
+
+```{r}
+    setwd("F:/Getting and Cleaning Data/Project")
+    activityLabels = read.table('./activity_labels.txt',header=FALSE) 
+    colnames(activityLabels)  = c("act_Id", "act_Type")
+    activityLabels
+```
+
+### Train Data Tables
+
+#### subjectTrain
+
+Its a (7352 x 1) table, where each row represents the *train data* collected for each subject who belong to the *train set*. The column represents the subject related with this activity. The content of the table is:
+
+```{r}
+    setwd("F:/Getting and Cleaning Data/Project")
+    subjectTrain = read.table('./train/subject_train.txt',header=FALSE) 
+    colnames(subjectTrain)  = "sub_Id"
+    subjectTrain
+```
+
+#### xTrain
+
+Its a (7352 x 561) table, where each row represents the *train data* collected and each columns represents the measurements of each feature.   Notice that this table is related with *features* and has the same number of rows of *subjectTrain*
+
+```{r}
+    setwd("F:/Getting and Cleaning Data/Project")
+    xTrain       = read.table('./train/x_train.txt',header=FALSE)  
+    colnames(xTrain)        = features[,2]
+    xTrain
+```
+
+#### yTrain
+
+Its a (7352 x 1) table, where each row represents the *train data* collected for the people on *train set*. The column represents the id of the activity. Notice that this table is ralted with *activityLabels* The content of the table is:
+
+```{r}
+    setwd("F:/Getting and Cleaning Data/Project")
+    yTrain  = read.table('./train/y_train.txt',header=FALSE) 
+    colnames(yTrain) = "act_Id"
+    yTrain
+```
+
+### Train Data Tables: Relationships
+
+*activityLabels* is related with *yTrain*: for each act_Id it could be one or more rows in *yTrain* and for each row in *yTrain* exist one and only one row in *activityLabels*.
+
+*Features* is related with *xTrain*: for each feature could be one or more rows in *xTrain* and vice versa.
+
+*xTrain* is related with *yTrain*, each row of *xTrain* corresponds to each row in *ytrain* and vice versa.
+
+*****
+
+### Test Data tables
+
+
+
+#### subjectTrain
+
+Its a (7352 x 1) table, where each row represents the *test data* collected for each subject who belong to the *test set*. The column represents the subject related with this activity. The content of the table is:
+
+```{r}
+    setwd("F:/Getting and Cleaning Data/Project")
+    subjectTest = read.table('./test/subject_test.txt',header=FALSE)
+    colnames(subjectTest) = "sub_Id"
+    subjecTest
+```
+
+#### xTest
+
+Its a (7352 x 561) table, where each row represents the *test data* collected and each columns represents the measurements of each feature.   Notice that this table is related with *features* and has the same number of rows of *subjectTest*
+
+```{r}
+    setwd("F:/Getting and Cleaning Data/Project")
+    xTest  = read.table('./test/x_test.txt',header=FALSE)
+    colnames(xTest) = features[,2]
+    xTest
+```
+
+#### yTest
+
+Its a (7352 x 1) table, where each row represents the *test data* collected for the people on *test set*. The column represents the id of the activity. Notice that this table is ralted with *activityLabels* The content of the table is:
+
+```{r}
+    setwd("F:/Getting and Cleaning Data/Project")
+    yTest  = read.table('./test/y_test.txt',header=FALSE) 
+    colnames(yTest) = "act_Id"
+    yTest
+```
+
+### Test Data Tables: Relationships
+
+*activityLabels* is related with *yTest*: for each act_Id it could be one or more rows in *yTest* and for each row in *yTest* exist one and only one row in *activityLabels*.
+
+*Features* is related with *xTest*: for each feature could be one or more rows in *xTest* and vice versa.
+
+*xTrain* is related with *yTest*, each row of *xTest* corresponds to each row in *yTest* and vice versa.
