@@ -97,16 +97,16 @@ Its a (6 x 2) table, where each row represents one activity. Each row has 2 colu
 
 #### subjectTrain
 
-Its a (7352 x 1) table, where each row represents the one measurements of the train data collected for each subject who belong to the *train set*. The column represents the subject related with this activity. The id subject in the *train set* data  are: 1, 3, 5, 6, 7, 8, 11, 14, 15, 16, 17, 19, 21, 22, 23, 25, 26, 27, 28, 29, 30. That is to say,  21 subjects which corresponds to the 70% of 30.
+Its a (7352 x 1) table, where each row represents one measurement of the train data collected for each subject who belong to the *train set*. The column represents the subject related with this measurement. The id subject in the *train set* data  are: 1, 3, 5, 6, 7, 8, 11, 14, 15, 16, 17, 19, 21, 22, 23, 25, 26, 27, 28, 29, 30. That is to say,  21 subjects which corresponds to the 70% of 30.
 
 
 #### xTrain
 
-Its a (7352 x 561) table, where each row represents the measurements of the train data collected for each subject, and each columns represents the measurements of each feature.   Notice that this table is related with *features* and has the same number of rows of *subjectTest*. 
+Its a (7352 x 561) table, where each row represents the measurements of the train data collected for one subject, and each column represents each feature.   Notice that this table is related with *features* and has the same number of rows of *subjectTest*. 
 
 #### yTrain
 
-Its a (7352 x 1) table, where each row represents the *train data* collected for the people on *train set*. The column represents the id of the activity. Notice that this table is ralted with *activityLabels*.  
+Its a (7352 x 1) table, where each row represents the *train data* collected for the people on *train set*. The column represents the id of the activity. Notice that this table is related with *activityLabels*.  
 
 ### Train Data Tables: Relationships
 
