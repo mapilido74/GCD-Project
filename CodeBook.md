@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This file describes the origin of the data, as well as their relationships
+This file describes the origin of the data, as well as their relationships. The relationship between the tables are the key that allows to merge an put together more than one table.
 
 ## Data Source
 
