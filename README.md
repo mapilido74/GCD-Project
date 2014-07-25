@@ -30,7 +30,7 @@ In this section **read** each one of the files related with the training and tes
 
 First at all, I identified the name of the columns of **fullData**, and then I use the function **grep** to choose only the columns associated  with the words **mean** or **std**, and put this information in a new file **meanStd**.
 
-After that, I  update the file **fullData**  only with the columns of my interest: *id of the subject*, *id of the activity* and the *features in meanStd*.
+After that, I  update the file **fullData**  only with the columns of my interest: *id of the subject*, *id of the activity* and the *features in meanStd*. I want to say that I don't select the features witn the pattern *meanFreq* and the pattern *gravityMean*
 
 3. Uses *descriptive activity names* to name the activities in the data set.
 
