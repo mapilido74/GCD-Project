@@ -28,9 +28,9 @@ In this section **read** each one of the files related with the training and tes
 
 2. Extracts only the measurements on the *mean* and *standard deviation* for each measurement.
 
-First at all, I identified the name of the columns of **fullData**, and then I use the function **grep** to choose only the columns associated  with the words **mean** or **std**, and put this information in a new file **meanStd**.
+First at all, I identified the name of the columns of **fullData**, and then I use the function **grep** to choose only the columns associated  with the words **mean** or **std**, and put this information in a new file **meanStd**. I want to say, that I don't select the features witn the pattern *meanFreq* and the pattern *gravityMean*, that is why I only selected 66 features instead of 79.
 
-After that, I  update the file **fullData**  only with the columns of my interest: *id of the subject*, *id of the activity* and the *features in meanStd*. I want to say that I don't select the features witn the pattern *meanFreq* and the pattern *gravityMean*
+After that, I  update the file **fullData**  only with the columns of my interest: *id of the subject*, *id of the activity* and the *features in meanStd*. 
 
 3. Uses *descriptive activity names* to name the activities in the data set.
 
