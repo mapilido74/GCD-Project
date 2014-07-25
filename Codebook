@@ -593,7 +593,7 @@ Its a (561 x 2) table, where each row represents one feature. Each row has 2 col
 560 angle(Y,gravityMean)
 561 angle(Z,gravityMean)
 
-#### ActivityLabels
+#### activityLabels
 
 Its a (6 x 2) table, where each row represents one activity. Each row has 2 columns, the first for the id of the activity and the second for the name of the activity. The content of the table is:
 
