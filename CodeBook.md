@@ -11,7 +11,7 @@ This file describes the origin of the data, as well as their relationships. The 
 A full description of the data is available at 
 *"http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones".
 
-The data  for this project come from 
+The data  for this project comes from 
 *"http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"* 
 
 
@@ -25,7 +25,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 
 ### General Aspects
 
-In this part I show only the most important fields of each table, in the sense that these fields (*key fields*) are necessary to link one table with another. In the case of *features* table, I show the name of the activity.
+In this part I show only the most important fields of each table, in the sense that these fields (*key fields*) are necessary to link one table with another. 
 
 #### features Table
 
@@ -78,8 +78,7 @@ tBodyAccJerkMean
 tBodyGyroMean
 tBodyGyroJerkMean
 
-All the information desbribed above generates a (561 x 2) table, where each row represents one feature, and has 2 columns, the first for the id of the feature and the second for the name of the feature.
-
+All the information desbribed above generates a (561 x 2) table, where each row represents one feature, and has 2 columns, the first for the id of the feature and the second for the name of the feature. 
 
 #### activityLabels
 
@@ -97,12 +96,12 @@ Its a (6 x 2) table, where each row represents one activity. Each row has 2 colu
 
 #### subjectTrain
 
-Its a (7352 x 1) table, where each row represents one measurement of the train data collected for each subject who belong to the *train set*. The column represents the subject related with this measurement. The id subject in the *train set* data  are: 1, 3, 5, 6, 7, 8, 11, 14, 15, 16, 17, 19, 21, 22, 23, 25, 26, 27, 28, 29, 30. That is to say,  21 subjects which corresponds to the 70% of 30.
+Its a (7352 x 1) table, where each row represents one measurement of the train data collected for each subject who belong to the *train set*. The column represents the subject related with this measurement. The id subject in the *train set* data  are: 1, 3, 5, 6, 7, 8, 11, 14, 15, 16, 17, 19, 21, 22, 23, 25, 26, 27, 28, 29, 30. That is to say,  21 subjects which corresponds to the 70% of the group of 30 volunteers.
 
 
 #### xTrain
 
-Its a (7352 x 561) table, where each row represents the measurements of the train data collected for one subject, and each column represents each feature.   Notice that this table is related with *features* and has the same number of rows of *subjectTest*. 
+Its a (7352 x 561) table, where each row represents the measurements of the train data collected for one subject, and each column represents each feature.   Notice that this table is related with *features* and has the samen number of rows that *subjectTest*, that it is to say, each row of *subjectTrain* can be combine with each row of *xTrain*
 
 #### yTrain
 
@@ -110,21 +109,21 @@ Its a (7352 x 1) table, where each row represents the *train data* collected for
 
 ### Train Data Tables: Relationships
 
-*activityLabels* is related with *yTrain*: for each act_Id it could be one or more rows in *yTrain* and for each row in *yTrain* exist one and only one row in *activityLabels*.
+*activityLabels* is related with *yTrain*: for each act_Id it could be one or more rows in *yTrain* and for each row in *yTrain* exist one and only one row in *activityLabels*. This realtionship is through the column "act_Id".
 
-*Features* is related with *xTrain*: for each feature could be one or more rows in *xTrain* and vice versa.
+*Features* is related with *xTrain*: for each feature could be one or more rows in *xTrain* and vice versa. This relationship is through the 561 columns of *xTrain* where each one of the 561 columns is related with one row of the *features*, specifically with the value in the second column of each row.
 
-*xTrain* is related with *yTrain*, each row of *xTrain* corresponds to each row in *ytrain* and vice versa.
+*xTrain* is related with *yTrain*, each row of *xTrain* can be add to each row in *ytrain* and vice versa.
 
 ### Test Data tables
 
 #### subjectTrain
 
-Its a (7352 x 1) table, where each row represents the one measurements collected for each subject who belong to the *test set*. The column represents the subject related with this measurement. The id subject in the *test set* data  are:2, 4, 9, 10, 12, 13, 18, 20, 24. That is to say,  9 subjects which corresponds to the 30% of 30. 
+Its a (7352 x 1) table, where each row represents the one measurements collected for each subject who belong to the *test set*. The column represents the subject related with this measurement. The id subject in the *test set* data  are:2, 4, 9, 10, 12, 13, 18, 20, 24. That is to say,  9 subjects which corresponds to the 30% of the group of 30 volunteers. 
 
 #### xTest
 
-Its a (7352 x 561) table, where each row represents *test data* collected and each columns represents the measurements of each feature.   Notice that this table is related with *features* and has the same number of rows of *subjectTest*
+Its a (7352 x 561) table, where each row represents *test data* collected and each columns represents the measurements of each feature.   Notice that this table is related with *features* and has the same number of rows of *subjectTest* that it is to say, each row of *subjectTest* can be combine with each row of *xTest*.
 
 #### yTest
 
@@ -132,8 +131,8 @@ Its a (7352 x 1) table, where each row represents the *test data* collected for 
 
 ### Test Data Tables: Relationships
 
-*activityLabels* is related with *yTest*: for each act_Id it could be one or more rows in *yTest* and for each row in *yTest* exist one and only one row in *activityLabels*.
+*activityLabels* is related with *yTest*: for each act_Id it could be one or more rows in *yTest* and for each row in *yTest* exist one and only one row in *activityLabels*. This realtionship is through the column "act_Id".
 
 *Features* is related with *xTest*: for each feature could be one or more rows in *xTest* and vice versa.
 
-*xTrain* is related with *yTest*, each row of *xTest* corresponds to each row in *yTest* and vice versa.
+*xTest* is related with *yTest*, each row of *xTest* corresponds to each row in *yTest* and vice versa. This relationship is through the 561 columns of *xTest* where each one of the 561 columns is related with one row of the *features*, specifically with the value in the second column of each row.
