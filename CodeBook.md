@@ -23,7 +23,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 
 ## Data Tables 
 
-### General Tables
+### General Aspects
 
 In this part I show only the most important fields of each table, in the sense that these fields (*key fields*) are necessary to link one table with another. In the case of *features* table, I show the name of the activity.
 
