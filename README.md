@@ -24,12 +24,11 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 
 #### 1.  Merges the *training* and the *test* sets to create one data set.
 
-In this section **read** each one of the files related with the training and test data. After that, assign names to the columns. Then create two files: **trainingData** and **testData**, and finally put together in a new file **fullData** which contains the id of the subject, the id of the activities and the next 561 columns corresponds to the features. In addition this file contains 10299 rows, which corresponds to all data set, of all 30 subjects (training + test).
+In this section **read** each one of the files related with the training and testing data set. After that, assign names to the columns. Then create two files: **trainingData** and **testData**, and finally put together in a new file **fullData** which contains the id of the subject, the id of the activities and the next 561 columns corresponds to the features. In addition this file contains 10299 rows, which corresponds to all data set, of all 30 subjects (training + test).
 
 #### 2. Extracts only the measurements on the *mean* and *standard deviation* for each measurement.
 
-First at all, I identified the name of the columns of **fullData**, and then I use the function **grep** to choose only the columns associated  with the words **mean** or **std**, and put this information in a new file **meanStd**. I want to say, that I don't select the features with the pattern *meanFreq* and the pattern *gravityMean*, then I only have 66 features instead of 79. 
-
+First at all, I identified the name of the columns of **fullData**, and then I use the function **grep** to choose only the columns associated  with the words **mean** or **std**, and put this information in a new file **meanStd**. I don't select the features with the pattern *meanFreq* and the pattern *gravityMean*, then I only have 66 features instead of 79. 
 After that, I  update the file **fullData**  only with the columns of my interest: *id of the subject*, *id of the activity* and the *features in meanStd*. 
 
 #### 3. Uses *descriptive activity names* to name the activities in the data set.
@@ -43,6 +42,6 @@ I put in **colNames** the updated names of the columns of **fullData**. Then, I 
 
 #### 5. Creates a second independent tidy data set with the average of each activity and each subject.
 
-In this part of the process I used the **melt** and the **dcast** function to summarize the data, and create a nex fil named **tidyData**, in which for each subject and  activity, are shown the mean of each activity.
+In this part of the process I used the **melt** and the **dcast** function to summarize the data, and create a new file named **tidyData**, in which for each subject,  activity, and features, I show the mean.
 
 Finally write **tidyData** in a text file.
