@@ -1,5 +1,6 @@
 -------------------------------------------------
-# "Getting and Cleaning Data: Project: CodeBook"
+#        "Getting and Cleaning Data"
+#             "Project: CodeBook"
 -------------------------------------------------
 
 ## Introduction
