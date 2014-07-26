@@ -32,16 +32,16 @@ First at all, I identified the name of the columns of **fullData**, and then I u
 
 After that, I  update the file **fullData**  only with the columns of my interest: *id of the subject*, *id of the activity* and the *features in meanStd*. 
 
-3. Uses *descriptive activity names* to name the activities in the data set.
+#### 3. Uses *descriptive activity names* to name the activities in the data set.
 
 Add the column name of the activities to the file **fullData**, to do this *merge* the files **fullData**, with the file **activityLabels**, the last file contains the id of the activity (the column used for merging) and the name of the activity. 
  
 
-4. Appropriately labels the data set with *descriptive variables names*.
+#### 4. Appropriately labels the data set with *descriptive variables names*.
 
 I put in **colNames** the updated names of the columns of **fullData**. Then, I updating this names with descriptivie variable names. Finally I *update* the names of the column of **fullData** with this descriptive variable names.
 
-5. Creates a second independent tidy data set with the average of each activity and each subject.
+#### 5. Creates a second independent tidy data set with the average of each activity and each subject.
 
 In this part of the process I used the **melt** and the **dcast** function to summarize the data, and create a nex fil named **tidyData**, in which for each subject and  activity, are shown the mean of each activity.
 
