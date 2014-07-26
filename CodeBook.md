@@ -128,7 +128,7 @@ Its a (7352 x 561) table, where each row represents *test data* collected and ea
 
 #### yTest
 
-Its a (7352 x 1) table, where each row represents the *test data* collected for the people on *test set*. The column represents the id of the activity. Notice that this table is ralted with *activityLabels* The content of the table is:
+Its a (7352 x 1) table, where each row represents the *test data* collected for the people on *test set*. The column represents the id of the activity. Notice that this table is ralted with *activityLabels* 
 
 ### Test Data Tables: Relationships
 
