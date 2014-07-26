@@ -22,11 +22,11 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 
 ### Process Description
 
-1.  Merges the *training* and the *test* sets to create one data set.
+#### 1.  Merges the *training* and the *test* sets to create one data set.
 
 In this section **read** each one of the files related with the training and test data. After that, assign names to the columns. Then create two files: **trainingData** and **testData**, and finally put together in a new file **fullData** which contains the id of the subject, the id of the activities and the next 561 columns corresponds to the features. In addition this file contains 10299 rows, which corresponds to all data set, of all 30 subjects (training + test).
 
-2. Extracts only the measurements on the *mean* and *standard deviation* for each measurement.
+#### 2. Extracts only the measurements on the *mean* and *standard deviation* for each measurement.
 
 First at all, I identified the name of the columns of **fullData**, and then I use the function **grep** to choose only the columns associated  with the words **mean** or **std**, and put this information in a new file **meanStd**. I want to say, that I don't select the features with the pattern *meanFreq* and the pattern *gravityMean*, then I only have 66 features instead of 79. 
 
